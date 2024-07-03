@@ -1,6 +1,7 @@
 import { ApiPromise } from "@polkadot/api";
 import BigNumber from "bignumber.js";
 import { UNIT_BN } from "@orderbook/core/constants";
+import { AnyJson } from "@polkadex/utils";
 
 import { isAssetPDEX } from "./isAssetPDEX";
 
@@ -25,7 +26,11 @@ export const fetchOnChainBalance = async (
     const asset = await api.query.assets.metadata(assetId);
     const balanceJson: any = res.toJSON();
     return new BigNumber(balanceJson?.balance || "0")
-      .dividedBy(new BigNumber(Math.pow(10, asset.toJSON().decimals as number)))
+      .dividedBy(
+        new BigNumber(
+          Math.pow(10, (asset.toJSON() as AnyJson).decimals as number)
+        )
+      )
       .toNumber();
   }
 };
