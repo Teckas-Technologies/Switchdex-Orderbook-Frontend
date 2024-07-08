@@ -77,6 +77,8 @@ export function useAddProxyAccount({
             tokenFeeId,
             firstAccount: !registeredProxies.length,
           });
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         addToTxQueue(signedExtrinsic);
         await handleTransaction(signedExtrinsic);
         return;
@@ -94,6 +96,8 @@ export function useAddProxyAccount({
           tokenFeeId,
           firstAccount: !registeredProxies.length,
         });
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       addToTxQueue(signedExtrinsic);
       await handleTransaction(signedExtrinsic);
       const { pair } = wallet.addFromMnemonic(mnemonic, name, password);
