@@ -56,6 +56,8 @@ export function useRemoveProxyAccount({
           proxyAddress: proxy,
           tokenFeeId,
         })) as SubmittableExtrinsic;
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       addToTxQueue(signedExtrinsic);
       await handleTransaction(signedExtrinsic);
 

@@ -65,7 +65,7 @@
     "@polkadex/thea": "^6.1.1",
     "@polkadex/utils": "^0.2.1",
     "@polkadot-cloud/assets": "^0.3.0",
-    "@polkadot/api": "^10.12.6",
+    "@polkadot/api": "^11.2.1",
     "@polkadot/extension-dapp": "^0.46.6",
     "@polkadot/ui-keyring": "^3.6.4",
     "@polkadot/util-crypto": "^12.6.2",
@@ -91,7 +91,7 @@
     "@next/eslint-plugin-next": "^14.2.1",
     "@orderbook/eslint-config": "*",
     "@orderbook/tsconfig": "*",
-    "@polkadot/types": "^10.12.6",
+    "@polkadot/types": "^11.2.1",
     "@types/d3-array": "^3.0.7",
     "@types/file-saver": "^2.0.5",
     "@types/jest": "^29.5.5",
@@ -104,7 +104,7 @@
     "typescript": "^5.3.3"
   },
   "resolutions": {
-    "@polkadot/api": "^10.12.6",
-    "@polkadot/types": "^10.12.6"
+    "@polkadot/api": "^11.2.1",
+    "@polkadot/types": "^11.2.1"
   }
 }
