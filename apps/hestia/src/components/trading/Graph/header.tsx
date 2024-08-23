@@ -3,7 +3,7 @@ import { useResizeObserver } from "usehooks-ts";
 import { useMemo, useRef } from "react";
 import { RiFullscreenLine, RiScreenshot2Line } from "@remixicon/react";
 
-import { ResolutionString } from "../../../../public/static/charting_library/charting_library";
+// import { ResolutionString } from "../../../../public/static/charting_library/charting_library";
 
 import { supported_resolutions } from "./config";
 
@@ -14,7 +14,7 @@ export const Header = ({
   onScreenshot,
 }: {
   activeResolution: string;
-  onChangeResolution: (e: ResolutionString) => void;
+  onChangeResolution: (e: any) => void;
   onChangeFullScreen: () => void;
   onScreenshot: () => void;
 }) => {
@@ -44,7 +44,7 @@ export const Header = ({
                 <li key={v.id}>
                   <button
                     type="button"
-                    onClick={() => onChangeResolution(v.id as ResolutionString)}
+                    onClick={() => onChangeResolution(v.id as any)}
                   >
                     <Typography.Text
                       size="xs"
@@ -71,7 +71,7 @@ export const Header = ({
                     checked={active}
                     key={v.id}
                     onCheckedChange={() =>
-                      onChangeResolution(v.id as ResolutionString)
+                      onChangeResolution(v.id as string)
                     }
                   >
                     {v.description}

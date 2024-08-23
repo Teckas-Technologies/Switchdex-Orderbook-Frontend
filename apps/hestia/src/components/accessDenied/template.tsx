@@ -53,7 +53,7 @@ export function Template() {
                   Terms of use
                 </Link>
               </Typography.Text>
-              , Polkadex is unable to provide services to users from this
+              , Switchdex is unable to provide services to users from this
               jurisdiction.
             </Typography.Text>
             <div className="flex flex-col gap-2">

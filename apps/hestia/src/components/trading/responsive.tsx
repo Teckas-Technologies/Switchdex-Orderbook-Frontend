@@ -2,7 +2,7 @@
 
 import { Tabs } from "@polkadex/ux";
 
-import { Graph } from "./Graph";
+// import { Graph } from "./Graph";
 import { Orderbook } from "./Orderbook";
 import { Markets } from "./Trades/Market";
 import { RecentTrades } from "./Trades/RecentTrades";
@@ -19,9 +19,9 @@ export function Responsive({ id }: { id: string }) {
         <Tabs.Trigger value="markets">Markets</Tabs.Trigger>
         <Tabs.Trigger value="recentTrades">Recent trades</Tabs.Trigger>
       </Tabs.List>
-      <Tabs.Content value="graph" className="flex-1 flex-col flex h-full">
+      {/* <Tabs.Content value="graph" className="flex-1 flex-col flex h-full">
         <Graph id={id} />
-      </Tabs.Content>
+      </Tabs.Content> */}
       <Tabs.Content
         value="orderbook"
         className="flex-1 flex flex-col h-full overflow-hidden"

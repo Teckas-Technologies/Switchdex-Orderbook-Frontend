@@ -12,7 +12,7 @@ import { Orderbook } from "./Orderbook";
 import { Trades } from "./Trades";
 import { Orders } from "./Orders";
 import { PlaceOrder } from "./PlaceOrder";
-import { Graph } from "./Graph";
+// import { Graph } from "./Graph";
 import { ResponsiveInteraction } from "./PlaceOrder/responsiveInteraction";
 import { Responsive } from "./responsive";
 import { ResponsiveAssetInfo } from "./AssetInfo/responsiveAssetInfo";
@@ -72,12 +72,12 @@ export function Template({ id }: { id: string }) {
               autoSaveId="persistence"
               className="!h-auto"
             >
-              <Resizable.Panel minSize={40}>
+              {/* <Resizable.Panel minSize={40}>
                 <div className="flex flex-col flex-grow h-full w-full">
                   <AssetInfo currentMarket={currentMarket} />
                   <Graph id={id} />
                 </div>
-              </Resizable.Panel>
+              </Resizable.Panel> */}
               <Resizable.Handle />
               {(tabletView || desktopView) && (
                 <Resizable.Panel

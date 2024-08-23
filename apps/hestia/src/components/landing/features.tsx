@@ -26,7 +26,7 @@ export const Features = () => {
       </div>
       <div className="flex flex-col">
         <div className="max-md:flex-col flex items-center justify-between max-md:pt-10 md:px-10 border-y border-primary">
-          <div className="flex flex-col gap-2 md:max-w-xs md:min-w-[250px]">
+          <div className="flex flex-col gap-2 md:max-w-xs md:text-left text-center md:min-w-[250px]">
             <Typography.Heading size="2xl">
               Lightening fast trades
             </Typography.Heading>
@@ -117,10 +117,13 @@ export const Features = () => {
           className="whitespace-nowrap"
           size="base"
         >
-          Read more about Polkadex Orderbook
+          Read more about Switchdex Orderbook
           <RiArrowRightLine className="w-4 h-4 ml-3 inline-block max-md:rotate-90" />
         </Typography.Text>
-        <Link href={lastUsedMarketUrl}>
+        {/* <Link href={lastUsedMarketUrl}>
+          <Button.Solid>Start trading</Button.Solid>
+        </Link> */}
+        <Link href="/">
           <Button.Solid>Start trading</Button.Solid>
         </Link>
       </div>

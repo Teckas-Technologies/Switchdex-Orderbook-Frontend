@@ -63,14 +63,16 @@ export const ResponsiveMenuModal = ({
                 <div className="flex flex-col gap-5">
                   <HeaderLink.Single
                     size="lg"
-                    href={lastUsedMarketUrl}
+                    // href={lastUsedMarketUrl}
+                    href="/"
                     className="text-lg"
                   >
                     Trade
                   </HeaderLink.Single>
                   <HeaderLink.Single
                     size="lg"
-                    href="/thea"
+                    // href="/thea"
+                    href="/"
                     className="text-lg"
                     disabled={isBridgeDisabled}
                   >
@@ -78,7 +80,8 @@ export const ResponsiveMenuModal = ({
                   </HeaderLink.Single>
                   <HeaderLink.Single
                     size="lg"
-                    href="/rewards"
+                    // href="/rewards"
+                    href="/"
                     className="text-lg"
                     disabled={isRewardDisabled}
                   >
@@ -87,15 +90,15 @@ export const ResponsiveMenuModal = ({
                   <HeaderLink.Accordion
                     items={[
                       {
-                        href: "https://discord.gg/G4KMw2sGGe",
+                        href: "/",
                         label: "Community support",
                       },
                       {
-                        href: "https://docs.polkadex.trade/orderbookPolkadexFAQHowToTradeStep1",
+                        href: "/",
                         label: "Orderbook guide",
                       },
                       {
-                        href: "https://docs.polkadex.trade/orderbookPolkadexFAQWallets",
+                        href: "/",
                         label: "FAQ",
                       },
                     ]}
@@ -106,27 +109,27 @@ export const ResponsiveMenuModal = ({
                     items={[
                       { href: "/", label: "Listings" },
                       {
-                        href: "https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Terms_of_Use.pdf",
+                        href: "/",
                         label: "Terms of use",
                       },
                       {
-                        href: "https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Privacy_Policy.pdf",
+                        href: "/",
                         label: "Privacy policy",
                       },
                       {
-                        href: "https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Disclaimer_and_Legal_Notice.pdf",
+                        href: "/",
                         label: "Disclaimer",
                       },
                       {
-                        href: "https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Excluded_Jurisdictions.pdf",
+                        href: "/",
                         label: "Excluded Jurisdictions",
                       },
                       {
-                        href: "https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Data_Retention_Policy.pdf",
+                        href: "/",
                         label: "Data Retention Policy",
                       },
                       {
-                        href: "https://pdexanalytics.com",
+                        href: "/",
                         label: "Analytics",
                       },
                     ]}
@@ -136,35 +139,35 @@ export const ResponsiveMenuModal = ({
                   <HeaderLink.Accordion
                     items={[
                       {
-                        href: "https://t.me/Polkadex",
+                        href: "/",
                         label: "Telegram",
                         svg: (
                           <RiTelegramFill className="bg-sky-500 text-textBase rounded-full w-5 h-5" />
                         ),
                       },
                       {
-                        href: "https://discord.com/invite/Uvua83QAzk/",
+                        href: "/",
                         label: "Discord",
                         svg: (
                           <RiDiscordFill className="bg-blue-700  text-textBase rounded-full w-5 h-5 p-0.5" />
                         ),
                       },
                       {
-                        href: "https://twitter.com/polkadex",
+                        href: "/",
                         label: "Twitter",
                         svg: (
                           <RiTwitterXFill className="rounded-full text-textBase w-5 h-5" />
                         ),
                       },
                       {
-                        href: "https://github.com/Polkadex-Substrate",
+                        href: "/",
                         label: "Github",
                         svg: (
                           <RiGithubFill className="rounded-full text-textBase w-5 h-5" />
                         ),
                       },
                       {
-                        href: "https://www.reddit.com/r/polkadex/",
+                        href: "/",
                         label: "Reddit",
                         svg: (
                           <RiRedditFill className="bg-red-500 text-textBase rounded-full w-5 h-5" />
@@ -228,10 +231,10 @@ export const ResponsiveMenuModal = ({
               className="max-w-[80px]"
             />
             <div className="flex flex-col gap-2">
-              <Typography.Heading>Download Polkadex App</Typography.Heading>
+              <Typography.Heading>Download Switchdex App</Typography.Heading>
               <Typography.Paragraph size="sm" appearance="primary">
-                Take Polkadex Orderbook with you and trade anywhere you want
-                with the Polkadex App.
+                Take Switchdex Orderbook with you and trade anywhere you want
+                with the Switchdex App.
               </Typography.Paragraph>
             </div>
           </div>

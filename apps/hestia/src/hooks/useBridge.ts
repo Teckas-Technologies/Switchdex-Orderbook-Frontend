@@ -104,7 +104,7 @@ export function useBridge({ onSuccess }: { onSuccess: () => void }) {
 
       await signAndSubmitPromiseWrapper({
         signer: sourceAccount.signer,
-        tx: ext,
+        tx: ext as any,
         address: sourceAccount.address,
         criteria: "IS_FINALIZED",
       });

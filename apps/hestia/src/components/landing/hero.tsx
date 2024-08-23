@@ -40,10 +40,13 @@ export const Hero = () => {
         </div>
 
         <Button.Solid asChild className="w-fit" size="md">
-          <Link href={lastUsedMarketUrl}>Start trading</Link>
+          {/* <Link href={lastUsedMarketUrl}>Start trading</Link> */}
+          <Link href="/">Start trading</Link>
         </Button.Solid>
       </div>
-      <Image
+
+      <img src="img/analysys_switchdex.jpg" className="sm:px-32 -mt-10" alt="" />
+      {/* <Image
         alt="Orderboo trading platform preview"
         src={OrderbookImage}
         placeholder="blur"
@@ -52,7 +55,7 @@ export const Hero = () => {
           height: "auto",
         }}
         className="sm:px-32 -mt-10"
-      />
+      /> */}
     </section>
   );
 };

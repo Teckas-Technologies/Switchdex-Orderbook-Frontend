@@ -8,7 +8,17 @@ export const Footer = () => {
   return (
     <footer className="max-w-screen-2xl max-2xl:px-2 mx-auto w-full border-t border-primary">
       <div className="flex flex-wrap gap-10 justify-between py-10">
-        <Logo.Orderbook className="min-w-[150px] h-7 flex-1" />
+        {/* <Logo.Orderbook className="min-w-[150px] h-7 flex-1" /> */}
+        <Link
+          href="/"
+          className="min-w-[150px] h-7 flex-1 md:ml-[130px]"
+        >
+          <div className="logo h-8 w-auto flex items-center gap-1">
+            <img src="img/dark_switchdex_logo.jpg" className="h-8 w-8" alt="" />
+            <h2 className="text-lg text-white">Switchdex</h2>
+          </div>
+          {/* <Logo.Orderbook className="max-md:pointer-events-none max-md:h-8 max-md:[&_g]:hidden" /> */}
+        </Link>
         {data.map((value) => (
           <div key={value.title} className="flex-1 flex flex-col gap-4">
             <Typography.Heading type="h4" size="md">
@@ -30,15 +40,15 @@ export const Footer = () => {
           </div>
         ))}
       </div>
-      <div className="max-md:flex-col gap-3 flex md:items-center justify-between py-5 border-t border-primary">
+      <div className="max-md:flex-col md:mx-8 gap-3 flex md:items-center justify-between py-5 border-t border-primary">
         <div className="max-md:flex-1 flex items-center max-md:justify-between gap-4">
-          <Typography.Text>Copyright ©2024 Polkadex Inc.</Typography.Text>
+          <Typography.Text>Copyright ©2024 Switchdex Inc.</Typography.Text>
           <Typography.Text
             appearance="primary"
             className="hover:text-current duration-300 transition-colors"
           >
             <Link
-              href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Terms_of_Use.pdf"
+              href="/"
               target="_blank"
             >
               Terms and conditions
@@ -49,7 +59,7 @@ export const Footer = () => {
             className="hover:text-current duration-300 transition-colors"
           >
             <Link
-              href="https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Privacy_Policy.pdf"
+              href="/"
               target="_blank"
             >
               Privacy policy
@@ -83,17 +93,17 @@ const data = [
     links: [
       {
         title: "Overview",
-        href: "https://docs.polkadex.trade/",
+        href: "/",
         target: "_blank",
       },
       {
         title: "Roadmap",
-        href: "https://polkadex.trade/roadmap",
+        href: "/",
         target: "_blank",
       },
       {
         title: "Token economics",
-        href: "https://polkadex.trade/tokeneconomics",
+        href: "/",
         target: "_blank",
       },
     ],
@@ -103,12 +113,12 @@ const data = [
     links: [
       {
         title: "Orderbook",
-        href: "https://orderbook.polkadex.trade",
+        href: "/",
         target: "_blank",
       },
       {
         title: "THEA Crosschain",
-        href: "https://orderbook.polkadex.trade/thea",
+        href: "/",
         target: "_blank",
       },
     ],
@@ -118,17 +128,17 @@ const data = [
     links: [
       {
         title: "Github Repository",
-        href: "https://github.com/Polkadex-Substrate",
+        href: "/",
         target: "_blank",
       },
       {
         title: "Tutorials",
-        href: "https://www.youtube.com/channel/UC6fXRDT4lLKlXG3gP0PP06Q",
+        href: "/",
         target: "_blank",
       },
       {
         title: "Substrate",
-        href: "https://www.substrate.io/",
+        href: "/",
         target: "_blank",
       },
     ],
@@ -138,17 +148,17 @@ const data = [
     links: [
       {
         title: "Help center",
-        href: "https://discord.com/invite/Uvua83QAzk",
+        href: "/",
         target: "_blank",
       },
       {
         title: "Report issues",
-        href: "https://t.me/Polkadex",
+        href: "/",
         target: "_blank",
       },
       {
         title: "Beginner's guide",
-        href: "https://docs.polkadex.trade/orderbookPolkadexFAQWallets",
+        href: "/",
         target: "_blank",
       },
     ],
@@ -159,31 +169,31 @@ const socialMedia = [
   {
     alt: "Twitter logo",
     iconName: "Twitter",
-    href: "https://twitter.com/polkadex",
+    href: "/",
     target: "_blank",
   },
   {
     alt: "Telegram logo",
     iconName: "Telegram",
-    href: "https://t.me/Polkadex",
+    href: "/",
     target: "_blank",
   },
   {
     alt: "Medium logo",
     iconName: "Medium",
-    href: "https://polkadex.medium.com/",
+    href: "/",
     target: "_blank",
   },
   {
     alt: "Reddit logo",
     iconName: "Reddit",
-    href: "https://www.reddit.com/r/polkadex",
+    href: "/",
     target: "_blank",
   },
   {
     alt: "Discord logo",
     iconName: "Discord",
-    href: "https://discord.com/invite/Uvua83QAzk/",
+    href: "/",
     target: "_blank",
   },
 ];

@@ -1,12 +1,12 @@
-import {
-  ChartPropertiesOverrides,
-  ResolutionString,
-} from "../../../../public/static/charting_library/charting_library";
+// import {
+//   ChartPropertiesOverrides,
+//   ResolutionString,
+// } from "../../../../public/static/charting_library/charting_library";
 import { themeConfig, commom } from "../../../../../../themeConfig";
 
 type Options = {
   studies_overrides: object;
-  overrides: Partial<ChartPropertiesOverrides>;
+  overrides: Partial<any>;
 };
 const extend = themeConfig.theme.extend;
 
@@ -55,7 +55,7 @@ export const supported_resolutions = [
 export const configurationData = {
   supported_resolutions: supported_resolutions.map(
     ({ id }) => id
-  ) as ResolutionString[],
+  ) as any,
   exchanges: [
     {
       value: "Polkadex",

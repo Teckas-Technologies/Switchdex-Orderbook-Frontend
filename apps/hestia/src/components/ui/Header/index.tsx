@@ -63,12 +63,16 @@ export const Header = forwardRef<HTMLDivElement>((_, ref) => {
         <div className="flex-1 flex items-center gap-5 py-2 overflow-auto">
           <Link
             href="/"
-            className="md:flex-1 md:max-w-[140px] max-md:w-8 max-md:h-8 max-md:overflow-hidden"
+            className="md:flex-1 md:max-w-[140px] max-md:w-auto max-md:h-8 max-md:overflow-hidden"
           >
-            <Logo.Orderbook className="max-md:pointer-events-none max-md:h-8 max-md:[&_g]:hidden" />
+            <div className="logo h-8 w-auto flex items-center gap-1">
+              <img src="img/dark_switchdex_logo.jpg" className="h-8 w-8" alt="" />
+              <h2 className="text-lg text-white">Switchdex</h2>
+            </div>
+            {/* <Logo.Orderbook className="max-md:pointer-events-none max-md:h-8 max-md:[&_g]:hidden" /> */}
           </Link>
           <div className="gap-5 hidden items-center lg:!flex">
-            <HeaderLink.Single href={lastUsedMarketUrl}>
+            {/* <HeaderLink.Single href={lastUsedMarketUrl}>
               Trade
             </HeaderLink.Single>
             <HeaderLink.Single
@@ -76,22 +80,22 @@ export const Header = forwardRef<HTMLDivElement>((_, ref) => {
               disabled={isBridgeDisabled}
             >
               Bridge
-            </HeaderLink.Single>
+            </HeaderLink.Single> */}
             <HeaderLink.Single disabled={isRewardDisabled} href="/rewards">
               Rewards
             </HeaderLink.Single>
             <HeaderLink.Dropdown
               items={[
                 {
-                  href: "https://discord.gg/G4KMw2sGGe",
+                  href: "#",
                   label: "Community support",
                 },
                 {
-                  href: "https://docs.polkadex.trade/orderbookPolkadexFAQHowToTradeStep1",
+                  href: "#",
                   label: "Orderbook guide",
                 },
                 {
-                  href: "https://docs.polkadex.trade/orderbookPolkadexFAQWallets",
+                  href: "#",
                   label: "FAQ",
                 },
               ]}
@@ -101,27 +105,27 @@ export const Header = forwardRef<HTMLDivElement>((_, ref) => {
             <HeaderLink.Dropdown
               items={[
                 {
-                  href: "https://pdexanalytics.com",
+                  href: "#",
                   label: "Analytics",
                 },
                 {
-                  href: "https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Terms_of_Use.pdf",
+                  href: "#",
                   label: "Terms of use",
                 },
                 {
-                  href: "https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Privacy_Policy.pdf",
+                  href: "#",
                   label: "Privacy policy",
                 },
                 {
-                  href: "https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Disclaimer_and_Legal_Notice.pdf",
+                  href: "#",
                   label: "Disclaimer",
                 },
                 {
-                  href: "https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Excluded_Jurisdictions.pdf",
+                  href: "#",
                   label: "Excluded Jurisdictions",
                 },
                 {
-                  href: "https://github.com/Polkadex-Substrate/Docs/blob/master/Polkadex_Data_Retention_Policy.pdf",
+                  href: "#",
                   label: "Data Retention Policy",
                 },
               ]}
@@ -131,31 +135,31 @@ export const Header = forwardRef<HTMLDivElement>((_, ref) => {
             <HeaderLink.Dropdown
               items={[
                 {
-                  href: "https://t.me/Polkadex",
+                  href: "#",
                   label: "Telegram",
                   svg: (
                     <RiTelegramFill className="bg-sky-500 rounded-full w-5 h-5" />
                   ),
                 },
                 {
-                  href: "https://discord.com/invite/Uvua83QAzk/",
+                  href: "#",
                   label: "Discord",
                   svg: (
                     <RiDiscordFill className="bg-blue-700 rounded-full w-5 h-5 p-0.5" />
                   ),
                 },
                 {
-                  href: "https://twitter.com/polkadex",
+                  href: "#",
                   label: "Twitter",
                   svg: <RiTwitterXFill className="rounded-full w-5 h-5" />,
                 },
                 {
-                  href: "https://github.com/Polkadex-Substrate",
+                  href: "#",
                   label: "Github",
                   svg: <RiGithubFill className="rounded-full w-5 h-5" />,
                 },
                 {
-                  href: "https://www.reddit.com/r/polkadex/",
+                  href: "#",
                   label: "Reddit",
                   svg: (
                     <RiRedditFill className="bg-red-500 rounded-full w-5 h-5" />

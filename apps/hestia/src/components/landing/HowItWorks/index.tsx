@@ -57,7 +57,10 @@ export const HowItWorks = () => {
           <RiArrowRightLine className="w-4 h-4 ml-3 inline-block max-md:rotate-90" />
         </Typography.Text>
         <Button.Solid className="w-full">
-          <Link href={lastUsedMarketUrl} className="w-full">
+          {/* <Link href={lastUsedMarketUrl} className="w-full">
+            Start trading
+          </Link> */}
+          <Link href="/" className="w-full">
             Start trading
           </Link>
         </Button.Solid>

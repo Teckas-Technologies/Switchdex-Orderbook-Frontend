@@ -1,15 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {},
     "dev": {
-      "dependsOn": ["generate"],
-      "cache": false,
       "persistent": true,
       "env": [
         "POLKADEX_CHAIN",
@@ -32,9 +30,6 @@
         "GOOGLE_API_KEY",
         "GOOGLE_CLIENT_ID"
       ]
-    },
-    "generate": {
-      "cache": false
     }
   }
 }

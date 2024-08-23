@@ -17,7 +17,7 @@ const withPWA = require("next-pwa")({
 
 const nextConfig = {
   transpilePackages: ["@orderbook/core"],
-  reactStrictMode: false,
+  reactStrictMode: true,
   generateBuildId: async () => {
     try {
       const gitCommitHash = execSync("git rev-parse HEAD").toString().trim();
@@ -82,6 +82,8 @@ const sentryWebpackPluginOptions = {
 
   // An auth token is required for uploading source maps.
   authToken: process.env.SENTRY_AUTH_TOKEN,
+  
+  hideSourceMaps: true,
 
   silent: true, // Suppresses all logs
 
