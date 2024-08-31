@@ -37,7 +37,7 @@ export const HowItWorks = () => {
       </div>
       <div className="flex max-lg:flex-col">
         <Card title="1. Connect your wallet" active>
-          Select your preferred Polkadot-based wallet to get started with Clarus.
+          Select your wallet to get started.
         </Card>
         <Card title="2. Deposit Funds">
           Easily transfer funds into your trading account.

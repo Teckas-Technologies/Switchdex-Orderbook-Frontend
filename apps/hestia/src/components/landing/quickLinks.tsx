@@ -29,8 +29,7 @@ export const QuickLinks = () => {
         <div className="flex flex-col gap-2">
           <Typography.Heading type="h4">Join our community</Typography.Heading>
           <Typography.Paragraph appearance="primary">
-            Switchdex Community connects users from 100+ countries and supports
-            5+ languages.
+            Switchdex Community connects users from around the world and supports multiple languages.
           </Typography.Paragraph>
         </div>
 

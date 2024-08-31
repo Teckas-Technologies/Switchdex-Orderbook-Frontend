@@ -115,12 +115,7 @@ const data = [
         title: "Orderbook",
         href: "/",
         target: "_blank",
-      },
-      {
-        title: "THEA Crosschain",
-        href: "/",
-        target: "_blank",
-      },
+      }
     ],
   },
   {

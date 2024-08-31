@@ -220,7 +220,7 @@ export const ResponsiveMenuModal = ({
             </div>
           </div>
           <div className="flex items-center gap-4 border-t border-primary p-4">
-            <Image
+            {/* <Image
               src={QrCode}
               placeholder="blur"
               alt="padlock"
@@ -229,7 +229,7 @@ export const ResponsiveMenuModal = ({
                 height: "auto",
               }}
               className="max-w-[80px]"
-            />
+            /> */}
             <div className="flex flex-col gap-2">
               <Typography.Heading>Download Switchdex App</Typography.Heading>
               <Typography.Paragraph size="sm" appearance="primary">

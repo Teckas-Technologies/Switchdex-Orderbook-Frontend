@@ -9,22 +9,22 @@
     "description": "A non custodial orderbook based DEX for MYID and beyond.",
     "icons": [
         {
-            "src": "/img/dark_switchdex_logo.jpg",
+            "src": "./img/dark_switchdex_logo.jpg",
             "sizes": "192x192",
             "type": "image/jpeg"
         },
         {
-            "src": "/img/dark_switchdex_logo.jpg",
+            "src": "./img/dark_switchdex_logo.jpg",
             "sizes": "256x256",
             "type": "image/jpeg"
         },
         {
-            "src": "/img/dark_switchdex_logo.jpg",
+            "src": "./img/dark_switchdex_logo.jpg",
             "sizes": "384x384",
             "type": "image/jpeg"
         },
         {
-            "src": "/img/dark_switchdex_logo.jpg",
+            "src": "./img/dark_switchdex_logo.jpg",
             "sizes": "512x512",
             "type": "image/jpeg"
         }
