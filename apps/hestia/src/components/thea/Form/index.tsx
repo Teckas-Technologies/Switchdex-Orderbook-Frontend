@@ -208,7 +208,7 @@ export const Form = () => {
 
   const [isSecondDropdownOpen, setIsSecondDropdownOpen] = useState(false);
   const [secondSelectedItem, setSecondSelectedItem] = useState({
-    text: "MYID",
+    text: "Clarus",
     imgSrc: "img/myid.png",
   });
 
@@ -303,11 +303,11 @@ export const Form = () => {
                         <ul className="h-48 py-2 overflow-y-auto text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUsersButton">
                           <li>
                             <span
-                              onClick={() => handleFirstSelectItem({ text: 'MYID', imgSrc: 'img/myid.png' })}
+                              onClick={() => handleFirstSelectItem({ text: 'Clarus', imgSrc: 'img/myid.png' })}
                               className="text-white w-full bg-transperent hover:bg-level-1 border border-secondary font-bold py-3 text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 cursor-pointer"
                             >
-                              <img className="w-8 h-8 object-cover me-2 rounded-full" src="img/myid.png" alt="MYID logo" />
-                              <h2>MYID</h2>
+                              <img className="w-8 h-8 object-cover me-2 rounded-full" src="img/myid.png" alt="Clarus logo" />
+                              <h2>Clarus</h2>
                             </span>
                           </li>
                           <li>
@@ -345,7 +345,7 @@ export const Form = () => {
 
                   {/* <SelectNetwork
                     // name={sourceChain?.name}
-                    name="MYID"
+                    name="Clarus"
                     icon={sourceChain?.logo}
                   >
                     {supportedSourceChains.map((e) => {
@@ -432,11 +432,11 @@ export const Form = () => {
                         <ul className="h-auto py-2 overflow-y-auto text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUsersButton">
                           <li>
                             <span
-                              onClick={() => handleSecondSelectItem({ text: 'MYID', imgSrc: 'img/myid.png' })}
+                              onClick={() => handleSecondSelectItem({ text: 'Clarus', imgSrc: 'img/myid.png' })}
                               className="text-white w-full bg-transperent hover:bg-level-1 border border-secondary font-bold py-3 text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 cursor-pointer"
                             >
                               <img className="w-8 h-8 object-cover me-2 rounded-full" src="img/myid.png" alt="Bitcoin logo" />
-                              <h2>MYID</h2>
+                              <h2>Clarus</h2>
                             </span>
                           </li>
                           {/* <li>
@@ -489,7 +489,7 @@ export const Form = () => {
                     <RiInformationFill className="w-3 h-3 text-actionInput" />
                     <Typography.Text size="xs" appearance="primary">
                       {/* Available: {balanceAmount} {selectedAsset?.ticker} */}
-                      Available: 0 MYID
+                      Available: 0 Clarus
                     </Typography.Text>
                   </HoverInformation.Trigger>
                   <HoverInformation.Content
@@ -503,7 +503,7 @@ export const Form = () => {
                     </ResponsiveCard>
                     <ResponsiveCard label="Available" loading={loading}>
                       {/* {balanceAmount} {selectedAsset?.ticker} */}
-                      0 MYID
+                      0 Clarus
                     </ResponsiveCard>
                   </HoverInformation.Content>
                 </HoverInformation>
