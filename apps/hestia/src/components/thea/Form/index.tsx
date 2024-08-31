@@ -16,7 +16,7 @@ import {
   RiLoader2Line,
   RiWalletLine,
 } from "@remixicon/react";
-import { Fragment, useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { useTheaProvider } from "@orderbook/core/providers";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { useFormik } from "formik";
@@ -200,6 +200,53 @@ export const Form = () => {
     sourceChain?.name,
   ]);
 
+  const [isFirstDropdownOpen, setIsFirstDropdownOpen] = useState(false);
+  const [firstSelectedItem, setFirstSelectedItem] = useState({
+    text: "Switchdex",
+    imgSrc: "img/dark_switchdex_logo.jpg",
+  });
+
+  const [isSecondDropdownOpen, setIsSecondDropdownOpen] = useState(false);
+  const [secondSelectedItem, setSecondSelectedItem] = useState({
+    text: "MYID",
+    imgSrc: "img/myid.png",
+  });
+
+  const toggleFirstDropdown = () => {
+    setIsFirstDropdownOpen(!isFirstDropdownOpen);
+    setIsSecondDropdownOpen(false);
+  };
+
+  const toggleSecondDropdown = () => {
+    setIsSecondDropdownOpen(!isSecondDropdownOpen);
+    setIsFirstDropdownOpen(false);
+  };
+
+  const handleFirstSelectItem = (item) => {
+    setFirstSelectedItem(item);
+    setIsFirstDropdownOpen(false);
+  };
+
+  const handleSecondSelectItem = (item) => {
+    setSecondSelectedItem(item);
+    setIsSecondDropdownOpen(false);
+  };
+
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const handleClickOutside = (event:any) => {
+    if (dropdownRef.current && !dropdownRef.current?.contains(event.target)) {
+      setIsFirstDropdownOpen(false);
+      setIsSecondDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <Fragment>
       <ConfirmTransaction
@@ -230,8 +277,75 @@ export const Form = () => {
               <div className="flex flex-col gap-2 flex-1">
                 <div className="flex flex-col gap-2">
                   <Typography.Text appearance="primary">From</Typography.Text>
-                  <SelectNetwork
-                    name={sourceChain?.name}
+
+                  <div className="relative">
+                    <button
+                      id="dropdownUsersButton"
+                      onClick={toggleFirstDropdown}
+                      className="text-white w-full bg-transperent hover:bg-level-1 border border-secondary font-bold py-3 text-sm px-5 py-2.5 text-center inline-flex items-center justify-between"
+                      type="button"
+                    >
+                      <div className="asset flex items-center gap-2">
+                        <img
+                          src={firstSelectedItem.imgSrc}
+                          className={`${firstSelectedItem.text !== "Ethereum" ? "object-cover" : "object-contain"} h-8 w-8 rounded-full`}
+                          alt={firstSelectedItem.text}
+                        />
+                        <h2 className="text-xl">{firstSelectedItem.text}</h2>
+                      </div>
+                      <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+                      </svg>
+                    </button>
+
+                    {isFirstDropdownOpen && (
+                      <div id="dropdownUsers" className="z-10 bg-level-0 absolute w-full border border-secondary rounded-lg shadow w-60 dark:bg-gray-700" ref={dropdownRef}>
+                        <ul className="h-48 py-2 overflow-y-auto text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUsersButton">
+                          <li>
+                            <span
+                              onClick={() => handleFirstSelectItem({ text: 'MYID', imgSrc: 'img/myid.png' })}
+                              className="text-white w-full bg-transperent hover:bg-level-1 border border-secondary font-bold py-3 text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 cursor-pointer"
+                            >
+                              <img className="w-8 h-8 object-cover me-2 rounded-full" src="img/myid.png" alt="MYID logo" />
+                              <h2>MYID</h2>
+                            </span>
+                          </li>
+                          <li>
+                            <span
+                              onClick={() => handleFirstSelectItem({ text: 'Switchdex', imgSrc: 'img/dark_switchdex_logo.jpg' })}
+                              className="text-white w-full bg-transperent hover:bg-level-1 border border-secondary font-bold py-3 text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 cursor-pointer"
+                            >
+                              <img className="w-8 h-8 object-cover me-2 rounded-full" src="img/dark_switchdex_logo.jpg" alt="Switchdex logo" />
+                              <h2>Switchdex</h2>
+                            </span>
+                          </li>
+                          <li>
+                            <span
+                              onClick={() => handleFirstSelectItem({ text: 'Bitcoin', imgSrc: 'img/btc.png' })}
+                              className="text-white w-full bg-transperent hover:bg-level-1 border border-secondary font-bold py-3 text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 cursor-pointer"
+                            >
+                              <img className="w-8 h-8 object-cover me-2 rounded-full" src="img/btc.png" alt="Bitcoin logo" />
+                              <h2>Bitcoin</h2>
+                            </span>
+                          </li>
+                          <li>
+                            <span
+                              onClick={() => handleFirstSelectItem({ text: 'Ethereum', imgSrc: 'img/eth.png' })}
+                              className="text-white w-full bg-transperent hover:bg-level-1 border border-secondary font-bold py-3 text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 cursor-pointer"
+                            >
+                              <img className="w-7 h-8 object-contain me-2 rounded-full" src="img/eth.png" alt="Ethereum logo" />
+                              <h2 className="ml-1">Ethereum</h2>
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+
+
+                  {/* <SelectNetwork
+                    // name={sourceChain?.name}
+                    name="MYID"
                     icon={sourceChain?.logo}
                   >
                     {supportedSourceChains.map((e) => {
@@ -248,7 +362,7 @@ export const Form = () => {
                         />
                       );
                     })}
-                  </SelectNetwork>
+                  </SelectNetwork> */}
                 </div>
                 {sourceAccount ? (
                   <WalletCard
@@ -268,13 +382,14 @@ export const Form = () => {
                       <Typography.Text>Account not present</Typography.Text>
                     </div>
                     <Button.Solid
+                      className="bg-newBase"
                       appearance="secondary"
                       size="xs"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        setOpenSourceModal(true);
-                      }}
+                      // onClick={(e) => {
+                      //   e.preventDefault();
+                      //   e.stopPropagation();
+                      //   setOpenSourceModal(true);
+                      // }}
                     >
                       Connect wallet
                     </Button.Solid>
@@ -292,7 +407,52 @@ export const Form = () => {
               <div className="flex flex-col gap-2 flex-1">
                 <div className="flex flex-col gap-2">
                   <Typography.Text appearance="primary">To</Typography.Text>
-                  <SelectNetwork
+                  <div className="relative">
+                    <button
+                      id="dropdownUsersButton"
+                      onClick={toggleSecondDropdown}
+                      className="text-white w-full bg-transperent hover:bg-level-1 border border-secondary font-bold py-3 text-sm px-5 py-2.5 text-center inline-flex items-center justify-between"
+                      type="button"
+                    >
+                      <div className="asset flex items-center gap-2">
+                        <img
+                          src={secondSelectedItem.imgSrc}
+                          className={`${secondSelectedItem.text !== "Ethereum" ? "object-cover" : "object-contain"} h-8 w-8 rounded-full`}
+                          alt={secondSelectedItem.text}
+                        />
+                        <h2 className="text-xl">{secondSelectedItem.text}</h2>
+                      </div>
+                      <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+                      </svg>
+                    </button>
+
+                    {isSecondDropdownOpen && (
+                      <div id="dropdownUsers" className="z-10 bg-level-0 absolute w-full border border-secondary rounded-lg shadow w-60 dark:bg-gray-700"  ref={dropdownRef}>
+                        <ul className="h-auto py-2 overflow-y-auto text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUsersButton">
+                          <li>
+                            <span
+                              onClick={() => handleSecondSelectItem({ text: 'MYID', imgSrc: 'img/myid.png' })}
+                              className="text-white w-full bg-transperent hover:bg-level-1 border border-secondary font-bold py-3 text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 cursor-pointer"
+                            >
+                              <img className="w-8 h-8 object-cover me-2 rounded-full" src="img/myid.png" alt="Bitcoin logo" />
+                              <h2>MYID</h2>
+                            </span>
+                          </li>
+                          {/* <li>
+                            <span
+                              onClick={() => handleSecondSelectItem({ text: 'Switchdex', imgSrc: 'img/dark_switchdex_logo.jpg' })}
+                              className="text-white w-full bg-transperent hover:bg-level-1 border border-secondary font-bold py-3 text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 cursor-pointer"
+                            >
+                              <img className="w-7 h-8 object-contain me-2 rounded-full" src="img/dark_switchdex_logo.jpg" alt="Ethereum logo" />
+                              <h2 className="ml-1">Switchdex</h2>
+                            </span>
+                          </li> */}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                  {/* <SelectNetwork
                     name={destinationChain?.name}
                     icon={destinationChain?.logo}
                   >
@@ -306,7 +466,7 @@ export const Form = () => {
                         />
                       );
                     })}
-                  </SelectNetwork>
+                  </SelectNetwork> */}
                 </div>
                 <AccountCombobox
                   account={destinationAccount}
@@ -328,7 +488,8 @@ export const Form = () => {
                   >
                     <RiInformationFill className="w-3 h-3 text-actionInput" />
                     <Typography.Text size="xs" appearance="primary">
-                      Available: {balanceAmount} {selectedAsset?.ticker}
+                      {/* Available: {balanceAmount} {selectedAsset?.ticker} */}
+                      Available: 0 MYID
                     </Typography.Text>
                   </HoverInformation.Trigger>
                   <HoverInformation.Content
@@ -341,7 +502,8 @@ export const Form = () => {
                       {destinationFeeAmount} {destinationFeeTicker}
                     </ResponsiveCard>
                     <ResponsiveCard label="Available" loading={loading}>
-                      {balanceAmount} {selectedAsset?.ticker}
+                      {/* {balanceAmount} {selectedAsset?.ticker} */}
+                      0 MYID
                     </ResponsiveCard>
                   </HoverInformation.Content>
                 </HoverInformation>
@@ -389,18 +551,20 @@ export const Form = () => {
                 >
                   <div className="flex items-center gap-2">
                     {selectedAsset ? (
-                      <Token
-                        name={selectedAsset.ticker}
-                        size="md"
-                        appearance={selectedAsset.ticker as TokenAppearance}
-                        className="rounded-full border border-primary"
-                      />
+                      <img src="img/myid.png" className="h-8 w-8" alt="" />
+                      // <Token
+                      //   name={selectedAsset.ticker}
+                      //   size="md"
+                      //   appearance={selectedAsset.ticker as TokenAppearance}
+                      //   className="rounded-full border border-primary"
+                      // />
                     ) : (
                       <div className="w-6 h-6 rounded-full bg-level-5" />
                     )}
 
                     <Typography.Text size="md">
-                      {selectedAsset ? selectedAsset.ticker : "Select token"}
+                      {/* {selectedAsset ? selectedAsset.ticker : "Select token"} */}
+                      <h2>MYID</h2>
                     </Typography.Text>
                   </div>
                   <RiArrowDownSLine className="w-4 h-4" />

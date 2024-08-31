@@ -12,7 +12,7 @@ export const defaultConfig: DefaultConfig = {
     "wss://polkadex.api.onfinality.io/public-ws",
   ],
   gaTrackerKey: process.env.GA_MEASUREMENT_ID ?? "G-PWZK8JEFLX",
-  landingPageMarket: process.env.LANDING_PAGE || "DOTUSDT",
+  landingPageMarket: process.env.LANDING_PAGE || "MYIDUSDT",
   incrementalOrderBook: false,
   orderBookSideLimit: 25,
   defaultStorageLimit: 100,

@@ -116,8 +116,16 @@ export const Profile = ({
     );
   return (
     <div className="flex items-center gap-2">
-      <Button.Solid size="2sm" className="font-medium" onClick={onClick}>
+      {/* <Button.Solid size="2sm" className="font-medium bg-backgroundNew hover:bg-sky-800" onClick={onClick}>
         Connect wallet
+      </Button.Solid> */}
+      <Button.Solid
+        asChild
+        className="w-fit font-medium bg-newBase cursor-pointer hover:bg-newHover active:bg-newPressed"
+        size="2sm"
+        // onClick={onClick}
+      >
+        <h2>Connect wallet</h2>
       </Button.Solid>
       <Button.Icon variant="ghost" onClick={onOpenMenu}>
         <RiMenuLine className="h-full w-full" />

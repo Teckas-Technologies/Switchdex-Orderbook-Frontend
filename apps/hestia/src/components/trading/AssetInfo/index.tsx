@@ -29,8 +29,8 @@ export const AssetInfo = ({ currentMarket }: { currentMarket?: Market }) => {
   const { loading } = useMarkets();
 
   const currentPrice = currentTicker?.close ?? "0.00";
-  const baseTicker = currentMarket?.baseAsset?.ticker ?? "";
-  const quoteTicker = currentMarket?.quoteAsset?.ticker ?? "";
+  const baseTicker = currentMarket?.baseAsset?.ticker ?? "MYID";
+  const quoteTicker = currentMarket?.quoteAsset?.ticker ?? "USDT";
 
   const changeFormatted = useMemo(
     () =>
@@ -74,7 +74,7 @@ export const AssetInfo = ({ currentMarket }: { currentMarket?: Market }) => {
   const chainName = useMemo(
     () =>
       getChainFromTicker(currentMarket?.baseAsset?.ticker as string) ??
-      "Polkadex",
+      "Switchdex",
     [currentMarket?.baseAsset?.ticker]
   );
 
@@ -86,13 +86,22 @@ export const AssetInfo = ({ currentMarket }: { currentMarket?: Market }) => {
         maxWidth ? "flex-col" : "gap-3"
       )}
     >
-      <Asset
+      {/* <Asset
         baseTicker={baseTicker}
         quoteTicker={quoteTicker}
-        tokenName={chainName}
-        loading={tickerLoading || loading}
+        // tokenName={chainName}
+        tokenName={"Switchdex"}
+        // loading={tickerLoading || loading}
+        loading={false}
         inlineView={maxWidth}
-      />
+      /> */}
+      <div className="holder flex items-center gap-2">
+        <img src="https://i.imgur.com/rDCPB2c.png" className="h-8 w-8 object-contain" alt="" />
+        <div className="texts">
+          <span className="text-secondary text-xs">Switchdex</span>
+          <h3>MYID/USDT</h3>
+        </div>
+      </div>
       <div
         className={classNames(
           "flex flex-1 flex-wrap gap-3 justify-between px-3 py-1 min-w-[20rem]",
@@ -102,21 +111,27 @@ export const AssetInfo = ({ currentMarket }: { currentMarket?: Market }) => {
         <Card.Single
           label={`Price ${quoteTicker}`}
           color={negative ? "red" : "green"}
-          loading={tickerLoading || loading}
+        // loading={tickerLoading || loading}
         >
           {priceFormatted}
         </Card.Single>
         <Card.Single
           label="24h Change"
           color={negative ? "red" : "green"}
-          loading={tickerLoading || loading}
+        // loading={tickerLoading || loading}
         >
           {changeFormatted}
         </Card.Single>
-        <Card.Single label="24h High" loading={tickerLoading || loading}>
+        <Card.Single
+          label="24h High"
+        // loading={tickerLoading || loading}
+        >
           {currentTicker?.high}
         </Card.Single>
-        <Card.Single label="24h Low" loading={tickerLoading || loading}>
+        <Card.Single
+          label="24h Low"
+          // loading={tickerLoading || loading}
+        >
           {currentTicker?.low}
         </Card.Single>
         <Card.WithDropdown
@@ -124,7 +139,7 @@ export const AssetInfo = ({ currentMarket }: { currentMarket?: Market }) => {
           items={[quoteTicker, baseTicker]}
           selected={state}
           onChange={(e: string) => setState(e)}
-          loading={tickerLoading || loading}
+          // loading={tickerLoading || loading}
         >
           {state === quoteTicker ? volumeFormattedQuote : volumeFormattedBase}
         </Card.WithDropdown>

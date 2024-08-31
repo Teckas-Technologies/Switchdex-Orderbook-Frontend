@@ -66,7 +66,7 @@ export function Template() {
                 >
                   <Link
                     target="_blank"
-                    href="https://discord.com/invite/Uvua83QAzk"
+                    href="#"
                   >
                     <RiDiscordLine className="w-4 h-4" />
                     <Typography.Text>Discord</Typography.Text>
@@ -77,7 +77,7 @@ export function Template() {
                   className="gap-2 w-fit"
                   appearance="secondary"
                 >
-                  <Link target="_blank" href="https://t.me/Polkadex">
+                  <Link target="_blank" href="#">
                     <RiTelegramLine className="w-4 h-4" />
                     <Typography.Text>Telegram</Typography.Text>
                   </Link>

@@ -43,12 +43,29 @@ export const PlaceOrder = ({ market, isBuy, isResponsive }: Props) => {
     setIsPasswordProtected(Boolean(selectedTradingAccount?.account?.isLocked));
   }, [selectedTradingAccount]);
 
+  const [tabs, setTabs] = useState({
+    limit: true,
+    market: false
+  })
+
   return (
     <Tabs defaultValue="limit" className="flex-1 flex h-full">
       <div className="flex items-center justify-between border-b border-primary">
         <Tabs.List className="px-2 py-2.5">
-          <Tabs.Trigger value="limit">Limit</Tabs.Trigger>
-          <Tabs.Trigger value="market">Market</Tabs.Trigger>
+          {/* <Tabs.Trigger value="limit">Limit</Tabs.Trigger>
+          <Tabs.Trigger value="market">Market</Tabs.Trigger> */}
+          <div className="tabs" onClick={() => setTabs({
+            limit: true,
+            market: false
+          })}>
+            <h2 className={`${tabs.limit ? "text-newBase" : "text-secondary"} text-md cursor-pointer font-bold hover:text-newHover active:newPressed`}>Limit</h2>
+          </div>
+          <div className="tabs" onClick={() => setTabs({
+            limit: false,
+            market: true
+          })}>
+            <h2 className={`${tabs.market ? "text-newBase" : "text-secondary"} text-md cursor-pointer font-bold hover:text-newHover active:newPressed`}>Market</h2>
+          </div>
           <Tabs.Trigger value="stopLimit" disabled>
             Stop Limit
           </Tabs.Trigger>
@@ -62,7 +79,28 @@ export const PlaceOrder = ({ market, isBuy, isResponsive }: Props) => {
           />
         ) : (
           <Fragment>
-            <Tabs.Content
+            <div className="tabcontents flex-1 flex flex-col h-full overflow-hidden">
+              {tabs.limit && <div className="tabcontent flex-1 flex flex-col h-full overflow-hidden">
+                <LimitOrder
+                  market={market}
+                  availableBaseAmount={availableBaseAmount}
+                  availableQuoteAmount={availableQuoteAmount}
+                  isBuy={isBuy}
+                  isResponsive={isResponsive}
+                />
+              </div>}
+              {tabs.market && <div className="tabcontent flex-1 flex flex-col h-full overflow-hidden">
+                <MarketOrder
+                  market={market}
+                  ticker={currentTicker}
+                  availableBaseAmount={availableBaseAmount}
+                  availableQuoteAmount={availableQuoteAmount}
+                  isBuy={isBuy}
+                  isResponsive={isResponsive}
+                />
+              </div>}
+            </div>
+            {/* <Tabs.Content
               value="limit"
               id="placeOrderContent"
               className="flex flex-1 flex-col gap-1 bg-level-0 p-2"
@@ -88,7 +126,7 @@ export const PlaceOrder = ({ market, isBuy, isResponsive }: Props) => {
                 isBuy={isBuy}
                 isResponsive={isResponsive}
               />
-            </Tabs.Content>
+            </Tabs.Content> */}
           </Fragment>
         )}
       </div>

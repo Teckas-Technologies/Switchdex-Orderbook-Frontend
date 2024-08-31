@@ -183,7 +183,7 @@ export function ASTR(props: ComponentProps<"svg">) {
           y2="12.2192"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#E6007A" />
+          <stop stopColor="#45C1C3" />
           <stop offset="0.21" stopColor="#703AC2" />
           <stop offset="0.46" stopColor="#0070EB" />
           <stop offset="0.77" stopColor="#0297FB" />

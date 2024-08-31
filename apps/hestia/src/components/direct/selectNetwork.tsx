@@ -92,8 +92,8 @@ export const fakeNetworks = [
     isTestnet: false,
   },
   {
-    name: "Polkadex",
-    logo: "Polkadex",
+    name: "Switchdex",
+    logo: "Switchdex",
     genesis: "0x001",
     type: "...",
     isTestnet: false,

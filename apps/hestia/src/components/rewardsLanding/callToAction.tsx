@@ -11,7 +11,7 @@ export const CallToAction = () => {
       <div className="flex flex-col gap-6 flex-1 max-w-[350px] max-lg:py-10 max-lg:text-center max-lg:items-center">
         <div className="flex flex-col gap-2">
           <Typography.Text size="xl" appearance="primary">
-            Your keys, your crypto, your exchange
+            Your Control, Your Assets, Your Platform
           </Typography.Text>
           <Typography.Heading size="3xl">
             Fast, Decentralized and Secure Trading.

@@ -51,9 +51,13 @@ export const RecentTrades = ({ id }: { id: string }) => {
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <Skeleton loading={loading || marketsLoading} className="h-full w-full">
+    <Skeleton 
+    // loading={loading || marketsLoading} 
+    loading={false}
+    className="h-full w-full"
+    >
       <div className="flex-1 flex flex-col h-full scrollbar-hide overflow-auto">
-        {list?.length ? (
+        {list?.length > 0 ? (
           <table className="w-full">
             <thead className="sticky top-[0] bg-level-0">
               {table.getHeaderGroups().map((headerGroup) => (

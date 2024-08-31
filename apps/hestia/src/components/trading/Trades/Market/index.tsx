@@ -51,8 +51,8 @@ export const Markets = ({ market }: { market: string }) => {
     title: string;
     illustration: keyof typeof Illustrations;
   } = !hasMarkets
-    ? { title: "No markets", illustration: "NoData" }
-    : { title: "No result found", illustration: "NoResultFound" };
+      ? { title: "No markets", illustration: "NoData" }
+      : { title: "No result found", illustration: "NoResultFound" };
 
   const loading = useMemo(
     () => loadingMarkets || tickerLoading || !hasMarkets,
@@ -61,13 +61,64 @@ export const Markets = ({ market }: { market: string }) => {
 
   return (
     <div className="flex-1 h-full flex flex-col justify-between">
-      <Filters
-        onSearch={handleFieldChange}
-        searchField={fieldValue.searchFieldValue}
-        onChangeFavorite={handleShowFavourite}
-        activeFavorite={fieldValue.showFavourite}
-      />
-      <Skeleton loading={loading} className="h-full">
+      <div>
+        <Filters
+          onSearch={handleFieldChange}
+          searchField={fieldValue.searchFieldValue}
+          onChangeFavorite={handleShowFavourite}
+          activeFavorite={fieldValue.showFavourite}
+        />
+        <div className="assets w-full">
+          <table className="w-full">
+            <thead>
+              <tr className="w-full">
+                <th className="text-md text-secondary text-left p-1">Market</th>
+                <th className="text-md text-secondary text-right md:pr-5">Volume/Price</th>
+                <th className="text-md text-secondary text-right pr-2">Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="w-full">
+                <td className="flex items-center gap-1 p-1">
+                  <img src="https://i.imgur.com/rDCPB2c.png" className="h-7 w-7 " alt="MYID/USDT" />
+                  <h4 className="text-md">MYID/<span className="text-secondary">USDT</span></h4>
+                </td>
+                <td className="text-md text-right md:pr-5">0.000</td>
+                <td className="text-md text-green-500 text-right pr-2">0.00%</td>
+              </tr>
+              <tr className="w-full">
+                <td className="flex items-center gap-1 p-1">
+                  <img src="https://i.imgur.com/43tnKmp.jpeg" className="h-7 w-7 object-cover" alt="SWCH/USDT" />
+                  <h4 className="text-md">SWCH/<span className="text-secondary">USDT</span></h4>
+                </td>
+                <td className="text-md text-right md:pr-5">0.000</td>
+                <td className="text-md text-green-500 text-right pr-2">0.00%</td>
+              </tr>
+              <tr className="w-full">
+                <td className="flex items-center gap-1 p-1">
+                  <img src="https://i.imgur.com/88uRHpO.png" className="h-7 w-7 object-cover" alt="SWCH/USDT" />
+                  <h4 className="text-md">BTC/<span className="text-secondary">USDT</span></h4>
+                </td>
+                <td className="text-md text-right md:pr-5">0.000</td>
+                <td className="text-md text-green-500 text-right pr-2">0.00%</td>
+              </tr>
+              <tr className="w-full">
+                <td className="flex items-center gap-1 p-1">
+                  <img src="https://i.imgur.com/V5eT9qE.png" className="h-7 w-7 object-contain" alt="SWCH/USDT" />
+                  <h4 className="text-md">ETH/<span className="text-secondary">USDT</span></h4>
+                </td>
+                <td className="text-md text-right md:pr-5">0.000</td>
+                <td className="text-md text-green-500 text-right pr-2">0.00%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      {/* <Skeleton 
+      // loading={loading} 
+      loading={false}
+      className="h-full">
         <div className="flex flex-col flex-1 border-t border-t-primary overflow-scroll scrollbar-hide">
           {!hasMarkets || !marketTokens.length ? (
             <GenericMessage {...messageProps} />
@@ -140,13 +191,14 @@ export const Markets = ({ market }: { market: string }) => {
             </div>
           )}
         </div>
-      </Skeleton>
+      </Skeleton> */}
 
       <Tickers
         tickers={marketTickers}
         activeTicker={fieldValue.marketsTabsSelected}
         onChangeTicker={handleMarketsTabsSelected}
-        loading={loading}
+        // loading={loading}
+        loading={false}
       />
     </div>
   );

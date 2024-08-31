@@ -37,14 +37,13 @@ export const HowItWorks = () => {
       </div>
       <div className="flex max-lg:flex-col">
         <Card title="1. Connect your wallet" active>
-          Choose your wallet from a variety of Polkadot-based wallets for use
-          within Orderbook.
+          Select your preferred Polkadot-based wallet to get started with Clarus.
         </Card>
-        <Card title="2. Add funds">
-          Transfer funds into your trading account
+        <Card title="2. Deposit Funds">
+          Easily transfer funds into your trading account.
         </Card>
         <Card title="3. Start trading">
-          Now, you‘re all set to start trading.
+          You’re ready to dive into the market and start trading.
         </Card>
       </div>
       <div className="max-md:flex-col flex items-center gap-6 p-10 border-t border-primary">
@@ -53,14 +52,14 @@ export const HowItWorks = () => {
           className="whitespace-nowrap"
           size="base"
         >
-          Click this small button to begin trading
+          Click this small button to start your trading
           <RiArrowRightLine className="w-4 h-4 ml-3 inline-block max-md:rotate-90" />
         </Typography.Text>
-        <Button.Solid className="w-full">
+        <Button.Solid asChild className="w-full bg-newBase hover:bg-newHover active:bg-newPressed">
           {/* <Link href={lastUsedMarketUrl} className="w-full">
             Start trading
           </Link> */}
-          <Link href="/" className="w-full">
+          <Link href="/trading/MYIDUSDT" className="w-full">
             Start trading
           </Link>
         </Button.Solid>

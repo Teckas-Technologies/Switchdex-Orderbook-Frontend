@@ -36,8 +36,11 @@ export const ConnectAccountWrapper = ({
           illustration="ConnectAccount"
           className="bg-level-0"
         >
-          <Button.Solid onClick={() => onToogleConnectExtension()}>
-            Connect Funding Account
+          <Button.Solid
+            asChild className="bg-newBase hover:bg-newHover active:bg-newPressed cursor-pointer"
+          // onClick={() => onToogleConnectExtension()}
+          >
+            <h2>Connect Funding Account</h2>
           </Button.Solid>
         </GenericMessage>
       ) : (
@@ -46,8 +49,12 @@ export const ConnectAccountWrapper = ({
           illustration="ConnectAccount"
           className="bg-level-0"
         >
-          <Button.Solid onClick={() => onToogleConnectTrading()}>
-            Connect Trading Account
+          <Button.Solid
+            asChild
+            className="bg-newBase hover:bg-newHover active:bg-newPressed cursor-pointer"
+            onClick={() => onToogleConnectTrading()}
+          >
+            <h2>Connect Trading Account</h2>
           </Button.Solid>
         </GenericMessage>
       )}

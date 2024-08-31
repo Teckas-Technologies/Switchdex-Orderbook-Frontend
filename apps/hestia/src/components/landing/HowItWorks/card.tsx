@@ -13,7 +13,7 @@ export const Card = ({
         className={classNames(
           "ml-1 w-5 h-5 relative rounded-full before:-translate-x-1/2 before:-translate-y-1/2 before:top-1/2 before:left-1/2 before:transform before:absolute before:rounded-full before:w-8 before:h-8 before:border",
           active
-            ? "before:border-primary-base bg-primary-base"
+            ? "before:border-newBase bg-newBase"
             : "before:border-primary bg-level-4"
         )}
       />

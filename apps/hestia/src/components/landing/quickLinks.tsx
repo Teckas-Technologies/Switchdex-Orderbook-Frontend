@@ -19,7 +19,7 @@ export const QuickLinks = () => {
           href="/"
           target="_blank"
         >
-          <Button.Underline className="p-0 h-fit w-fit">
+          <Button.Underline className="p-0 h-fit w-fit text-newBase hover:text-newHover">
             Explore FAQ
             <RiArrowRightLine className="w-4 h-4 mr-4" />
           </Button.Underline>

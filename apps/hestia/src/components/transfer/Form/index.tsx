@@ -461,14 +461,15 @@ export const Form = ({
               type="button"
               appearance="primary"
               size="md"
-              className="w-full py-5"
+              asChild
+              className="w-full py-5 bg-newBase hover:bg-newHover active:bg-newPressed cursor-pointer"
               onClick={() =>
                 isFromFunding
                   ? onToogleConnectExtension()
                   : onToogleConnectTrading()
               }
             >
-              Connect your account
+              <h2>Connect your account</h2>
             </Button.Solid>
           ) : (
             <Button.Solid
@@ -476,7 +477,8 @@ export const Form = ({
               disabled={disabled}
               appearance={loading ? "secondary" : "primary"}
               size="md"
-              className="w-full py-5"
+              asChild
+              className="w-full py-5 bg-newBase hover:bg-newHover active:bg-newPressed cursor-pointer"
             >
               {loading ? <Spinner.Keyboard className="w-5 h-5" /> : "Transfer"}
             </Button.Solid>

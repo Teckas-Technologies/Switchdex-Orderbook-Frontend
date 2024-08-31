@@ -64,7 +64,7 @@ export const ResponsiveMenuModal = ({
                   <HeaderLink.Single
                     size="lg"
                     // href={lastUsedMarketUrl}
-                    href="/"
+                    href="/trading/MYIDUSDT"
                     className="text-lg"
                   >
                     Trade
@@ -72,7 +72,7 @@ export const ResponsiveMenuModal = ({
                   <HeaderLink.Single
                     size="lg"
                     // href="/thea"
-                    href="/"
+                    href="/thea?from=Polkadot&to=Polkadex&asset=DOT"
                     className="text-lg"
                     disabled={isBridgeDisabled}
                   >

@@ -72,12 +72,15 @@ export function Template({ id }: { id: string }) {
               autoSaveId="persistence"
               className="!h-auto"
             >
-              {/* <Resizable.Panel minSize={40}>
+              <Resizable.Panel minSize={40}>
                 <div className="flex flex-col flex-grow h-full w-full">
                   <AssetInfo currentMarket={currentMarket} />
-                  <Graph id={id} />
+                  {/* <Graph id={id} /> */}
+                  <div className="demo w-full h-full flex items-center justify-center">
+                    <h2>Coming Soon...</h2>
+                  </div>
                 </div>
-              </Resizable.Panel> */}
+              </Resizable.Panel>
               <Resizable.Handle />
               {(tabletView || desktopView) && (
                 <Resizable.Panel
@@ -170,7 +173,7 @@ export function Template({ id }: { id: string }) {
             </Resizable>
           </Resizable.Panel>
         </Resizable>
-      )}
+      )} 
       {mobileView ? (
         <ResponsiveInteraction
           isResponsive={mobileView}
@@ -179,7 +182,7 @@ export function Template({ id }: { id: string }) {
         />
       ) : (
         <Footer marketsActive ref={footerRef} />
-      )}
+      )} 
     </Fragment>
   );
 }

@@ -78,14 +78,27 @@ export const SelectAsset = ({
                           }}
                         >
                           <div className="flex-1 [&_span]:!normal-case">
-                            <TokenCard
+                            <div className="holder flex items-center justify-between">
+                              <div className="first flex items-center gap-1">
+                                <img src="img/myid.png" className="h-8 w-9 object-contain" alt="" />
+                                <div className="texts">
+                                  <h2>MYID</h2>
+                                </div>
+                              </div>
+                              <div className="second">
+                                0 MYID
+                              </div>
+                            </div>
+                            {/* <TokenCard
                               key={e.id}
                               icon={e.ticker as TokenAppearance}
-                              ticker={e.ticker}
-                              tokenName={sourceChain?.name || ""}
+                              // ticker={e.ticker}
+                              ticker="SWCH"
+                              // tokenName={sourceChain?.name || ""}
+                              tokenName="Switchdex"
                               balance={formatAmount(balance)}
                               loading={sourceBalancesLoading}
-                            />
+                            /> */}
                           </div>
                         </Searchable.Item>
                       );

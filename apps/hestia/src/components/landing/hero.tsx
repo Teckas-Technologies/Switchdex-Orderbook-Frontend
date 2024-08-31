@@ -18,34 +18,34 @@ export const Hero = () => {
             <div className="flex items-center gap-2 text-primary">
               <Icons.Checked className="w-3 h-3" />
               <Typography.Text size={width > 800 ? "lg" : "md"}>
-                Non-custodial
+                Fast Finances
               </Typography.Text>
             </div>
             <div className="flex items-center gap-2 text-primary">
               <Icons.Checked className="w-3 h-3" />
               <Typography.Text size={width > 800 ? "lg" : "md"}>
-                Low latency
+                Secure
               </Typography.Text>
             </div>
             <div className="flex items-center gap-2 text-primary">
               <Icons.Checked className="w-3 h-3" />
               <Typography.Text size={width > 800 ? "lg" : "md"}>
-                Trading bots
+                Easy Accessible
               </Typography.Text>
             </div>
           </div>
-          <Typography.Heading size={width > 700 ? "7xl" : "3xl"}>
-            Trade on the CEXiest Decentralized Exchange
+          <Typography.Heading size={width > 700 ? "3xl" : "3xl"}>
+            Next-Gen Decentralized Banking Trade with Confidence on the Most Transparent Exchange
           </Typography.Heading>
         </div>
 
-        <Button.Solid asChild className="w-fit" size="md">
+        <Button.Solid asChild className="w-fit bg-newBase hover:bg-newHover active:bg-newPressed" size="md">
           {/* <Link href={lastUsedMarketUrl}>Start trading</Link> */}
-          <Link href="/">Start trading</Link>
+          <Link href="/trading/MYIDUSDT">Start trading</Link>
         </Button.Solid>
       </div>
 
-      <img src="img/analysys_switchdex.jpg" className="sm:px-32 -mt-10" alt="" />
+      <img src="img/trading_home.png" className="sm:px-32 -mt-10" alt="" />
       {/* <Image
         alt="Orderboo trading platform preview"
         src={OrderbookImage}

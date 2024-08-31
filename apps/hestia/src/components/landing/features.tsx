@@ -4,10 +4,10 @@ import Image from "next/image";
 import { getMarketUrl } from "@orderbook/core/helpers";
 import { RiArrowRightLine } from "@remixicon/react";
 
-import SpeedImage from "../../../public/img/speed.webp";
-import PadLock from "../../../public/img/padlock.webp";
-import MarketImage from "../../../public/img/market.webp";
-import NonCustodial from "../../../public/img/nonCustodial.webp";
+import SpeedImage from "../../../public/img/speed_new_2.webp";
+import PadLock from "../../../public/img/lock.webp";
+import MarketImage from "../../../public/img/boy.webp";
+import NonCustodial from "../../../public/img/suite.webp";
 
 export const Features = () => {
   const lastUsedMarketUrl = getMarketUrl();
@@ -15,24 +15,23 @@ export const Features = () => {
     <section className="flex flex-col border-b border-primary max-w-screen-xl mx-auto w-fulll max-xl:px-2">
       <div className="flex flex-wrap items-center justify-around">
         <Typography.Heading type="h4" size="4xl" className="py-6">
-          Your keys
+          Your Control
         </Typography.Heading>
         <Typography.Heading type="h4" size="4xl" className="py-6">
-          Your Crypto
+          Your Assets
         </Typography.Heading>
         <Typography.Heading type="h4" size="4xl" className="py-6">
-          Your exchange
+          Your Platform
         </Typography.Heading>
       </div>
       <div className="flex flex-col">
         <div className="max-md:flex-col flex items-center justify-between max-md:pt-10 md:px-10 border-y border-primary">
           <div className="flex flex-col gap-2 md:max-w-xs md:text-left text-center md:min-w-[250px]">
             <Typography.Heading size="2xl">
-              Lightening fast trades
+              Instantaneous Transactions
             </Typography.Heading>
             <Typography.Paragraph appearance="primary">
-              Trade crypto with sub-milisecond latency on a DEX that’s as fast
-              as CEXs.
+              Trade with unmatched speed on our decentralized exchange, benefiting from near-instant transaction times that rival the best centralized platforms.
             </Typography.Paragraph>
           </div>
           <Image
@@ -52,10 +51,10 @@ export const Features = () => {
           <div className="flex flex-col gap-2 text-center items-center justify-between max-md:border-b md:border-r border-primary pt-12 md:px-10 flex-1">
             <div className="flex flex-col gap-2">
               <Typography.Heading size="2xl">
-                Blockchain security
+                Blockchain-Backed Security
               </Typography.Heading>
               <Typography.Paragraph appearance="primary">
-                Secured by a validator set of 200+ network nodes.
+                Your assets are protected by a robust network, secured through a decentralized consensus across multiple nodes, ensuring your funds are safe at all times.
               </Typography.Paragraph>
             </div>
             <Image
@@ -66,17 +65,16 @@ export const Features = () => {
                 width: "100%",
                 height: "auto",
               }}
-              className="max-w-[380px]"
+              className="max-w-[380px] rounded-md"
             />
           </div>
           <div className="flex flex-col gap-2 text-center items-center justify-between max-md:border-b md:border-r border-primary pt-12 md:px-10 flex-1">
             <div className="flex flex-col gap-2">
               <Typography.Heading size="2xl">
-                Limit & market orders
+                Versatile Trading Options
               </Typography.Heading>
               <Typography.Paragraph appearance="primary">
-                Control price with limit orders, achieve instant execution with
-                market orders.
+                Take control of your trades with our flexible order types—set precise limits or execute instantly with market orders, all within a user-friendly interface.
               </Typography.Paragraph>
             </div>
             <Image
@@ -87,15 +85,14 @@ export const Features = () => {
                 width: "100%",
                 height: "auto",
               }}
-              className="max-w-[380px]"
+              className="max-w-[380px] rounded-md"
             />
           </div>
           <div className="flex flex-col gap-2 text-center items-center justify-between pt-12 md:px-10 flex-1">
             <div className="flex flex-col gap-2">
-              <Typography.Heading size="2xl">Non-custodial</Typography.Heading>
+              <Typography.Heading size="2xl">Complete Asset Control</Typography.Heading>
               <Typography.Paragraph appearance="primary">
-                You have full control over your liquidity, ensuring both safety
-                and the flexibility to withdraw it at any time.
+                Maintain full custody of your assets with our non-custodial platform, giving you the freedom and security to manage your funds without intermediaries.
               </Typography.Paragraph>
             </div>
             <Image
@@ -106,7 +103,7 @@ export const Features = () => {
                 width: "100%",
                 height: "auto",
               }}
-              className="max-w-[380px]"
+              className="max-w-[380px] rounded-md"
             />
           </div>
         </div>
@@ -123,9 +120,9 @@ export const Features = () => {
         {/* <Link href={lastUsedMarketUrl}>
           <Button.Solid>Start trading</Button.Solid>
         </Link> */}
-        <Link href="/">
-          <Button.Solid>Start trading</Button.Solid>
-        </Link>
+        <Button.Solid asChild className="w-fit bg-newBase hover:bg-newHover active:bg-newPressed" size="md">
+          <Link href="/trading/MYIDUSDT">Start trading</Link>
+        </Button.Solid>
       </div>
     </section>
   );

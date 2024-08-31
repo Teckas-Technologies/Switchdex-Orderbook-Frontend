@@ -71,7 +71,7 @@ export const Footer = forwardRef<HTMLDivElement, { marketsActive?: boolean }>(
             </div>
             <Typography.Text appearance="primary">
               <Link
-                href="https://discord.com/invite/Uvua83QAzk"
+                href="#"
                 target="_blank"
               >
                 <RiLifebuoyLine className="h-3 w-3 inline-block mr-1" />

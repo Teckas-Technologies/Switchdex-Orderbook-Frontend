@@ -14,6 +14,13 @@ export const POLKADEX_ASSET = {
   decimal: 12,
 };
 
+export const SWITCHDEX_ASSET = {
+  name: "SWITCHDEX",
+  ticker: "SWCH",
+  id: "SWCH",
+  decimal: 12,
+};
+
 export const defaultTicker = {
   market: "0-0",
   open: 0,

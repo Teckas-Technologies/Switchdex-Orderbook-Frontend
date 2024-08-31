@@ -94,15 +94,54 @@ export const Orders = () => {
     [width, scrollAreaView]
   );
 
+  const [orders, setOrders] = useState({
+    openorders: true,
+    orderhistory: false,
+    tradehistory: false,
+    balance: false
+  })
+
   return (
     <Tabs defaultValue="openOrders" className="flex-1 h-full">
       <div className="flex items-center justify-between border-b border-primary">
         <ScrollArea className=" overflow-hidden" style={{ maxWidth }}>
           <Tabs.List className="px-2 py-2.5 whitespace-nowrap">
-            <Tabs.Trigger value="openOrders" onClick={() => setShow(true)}>
+            {/* <Tabs.Trigger value="openOrders" onClick={() => setShow(true)}>
               Open Orders({openOrders?.length || 0})
-            </Tabs.Trigger>
-            <Tabs.Trigger value="orderHistory" onClick={() => setShow(true)}>
+            </Tabs.Trigger> */}
+            <div className="tabs" onClick={() => setOrders({
+              openorders: true,
+              orderhistory: false,
+              tradehistory: false,
+              balance: false
+            })}>
+              <h2 className={`${orders.openorders ? "text-newBase" : "text-secondary"} text-md cursor-pointer font-bold hover:text-newHover active:newPressed`}>Open Orders(0)</h2>
+            </div>
+            <div className="tabs" onClick={() => setOrders({
+              openorders: false,
+              orderhistory: true,
+              tradehistory: false,
+              balance: false
+            })}>
+              <h2 className={`${orders.orderhistory ? "text-newBase" : "text-secondary"} text-md cursor-pointer font-bold hover:text-newHover active:newPressed`}>Order History</h2>
+            </div>
+            <div className="tabs" onClick={() => setOrders({
+              openorders: false,
+              orderhistory: false,
+              tradehistory: true,
+              balance: false
+            })}>
+              <h2 className={`${orders.tradehistory ? "text-newBase" : "text-secondary"} text-md cursor-pointer font-bold hover:text-newHover active:newPressed`}>Trade History</h2>
+            </div>
+            <div className="tabs" onClick={() => setOrders({
+              openorders: false,
+              orderhistory: false,
+              tradehistory: false,
+              balance: true
+            })}>
+              <h2 className={`${orders.balance ? "text-newBase" : "text-secondary"} text-md cursor-pointer font-bold hover:text-newHover active:newPressed`}>Balances</h2>
+            </div>
+            {/* <Tabs.Trigger value="orderHistory" onClick={() => setShow(true)}>
               Order History
             </Tabs.Trigger>
             <Tabs.Trigger value="tradeHistory" onClick={() => setShow(true)}>
@@ -110,11 +149,11 @@ export const Orders = () => {
             </Tabs.Trigger>
             <Tabs.Trigger value="balances" onClick={() => setShow(false)}>
               Balances
-            </Tabs.Trigger>
+            </Tabs.Trigger> */}
           </Tabs.List>
           {scrollAreaView && <ScrollArea.Bar orientation="horizontal" />}
         </ScrollArea>
-        {scrollAreaView ? (
+        {/* {scrollAreaView ? (
           <Popover>
             <Popover.Trigger className="group" asChild>
               <Button.Icon variant="ghost">
@@ -174,7 +213,7 @@ export const Orders = () => {
                     <DateRangePicker
                       ranges={ranges}
                       onChange={onChangeDateRange}
-                      rangeColors={["#E6007A"]}
+                      rangeColors={["#45C1C3"]}
                       staticRanges={defaultStaticRanges}
                       inputRanges={[]}
                     />
@@ -183,10 +222,40 @@ export const Orders = () => {
               </div>
             )}
           </Fragment>
-        )}
+        )} */}
       </div>
       <div className="h-full flex-1 flex flex-col" ref={ref}>
-        <Tabs.Content
+        <div className="tabcontents flex-1 flex flex-col h-full overflow-hidden">
+          {orders.openorders && <div className="tabcontent flex-1 flex flex-col bg-level-0 max-sm:max-h-[400px] max-sm:min-h-[290px]">
+            {connected ? (
+              <OpenOrdersTable filters={filters} height={height} />
+            ) : (
+              <ConnectAccountWrapper funding={isFundingType} />
+            )}
+          </div>}
+          {orders.orderhistory && <div className="flex-1 flex flex-col bg-level-0 max-sm:max-h-[400px] max-sm:min-h-[290px]">
+            {connected ? (
+              <OrderHistoryTable filters={filters} height={height} />
+            ) : (
+              <ConnectAccountWrapper funding={isFundingType} />
+            )}
+          </div>}
+          {orders.tradehistory && <div className="flex-1 flex flex-col bg-level-0 max-sm:max-h-[400px] max-sm:min-h-[290px]">
+            {connected ? (
+              <TradeHistoryTable filters={filters} height={height} />
+            ) : (
+              <ConnectAccountWrapper funding={isFundingType} />
+            )}
+          </div>}
+          {orders.balance && <div className="flex-1 flex flex-col bg-level-0 max-sm:max-h-[400px] max-sm:min-h-[290px]">
+            {mainAddress?.length > 0 ? (
+              <BalancesTable height={height} />
+            ) : (
+              <ConnectAccountWrapper funding />
+            )}
+          </div>}
+        </div>
+        {/* <Tabs.Content
           value="openOrders"
           className="flex-1 flex flex-col bg-level-0 max-sm:max-h-[400px] max-sm:min-h-[290px]"
         >
@@ -225,7 +294,7 @@ export const Orders = () => {
           ) : (
             <ConnectAccountWrapper funding />
           )}
-        </Tabs.Content>
+        </Tabs.Content> */}
       </div>
     </Tabs>
   );

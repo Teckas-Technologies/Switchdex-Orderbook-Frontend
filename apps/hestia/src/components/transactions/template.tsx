@@ -61,13 +61,12 @@ export function Template() {
 
   const maxHeight = useMemo(
     () =>
-      `calc(100vh - ${
-        overviewHeight +
-        headerHeight +
-        helpHeight +
-        tableRowsHeight +
-        footerHeight +
-        50
+      `calc(100vh - ${overviewHeight +
+      headerHeight +
+      helpHeight +
+      tableRowsHeight +
+      footerHeight +
+      50
       }px)`,
     [headerHeight, overviewHeight, helpHeight, tableRowsHeight, footerHeight]
   );
@@ -77,6 +76,14 @@ export function Template() {
   const mobileView = useMemo(() => width <= 640, [width]);
   const { browserAccountPresent, extensionAccountPresent } =
     useConnectWalletProvider();
+
+  const [tabs, setTabs] = useState({
+    transfer: true,
+    openorders: false,
+    orderhistory: false,
+    tradehistory: false,
+    crosschain: false
+  })
 
   return (
     <div
@@ -121,7 +128,7 @@ export function Template() {
               >
                 <ScrollArea className={`${scrollAreaView && "max-w-80"}`}>
                   <Tabs.List className="py-2 whitespace-nowrap">
-                    <Tabs.Trigger value="transfer">Transfer</Tabs.Trigger>
+                    {/* <Tabs.Trigger value="transfer">Transfer</Tabs.Trigger>
                     <Tabs.Trigger value="openOrders">Open Orders</Tabs.Trigger>
                     <Tabs.Trigger value="orderHistory">
                       Order History
@@ -129,7 +136,52 @@ export function Template() {
                     <Tabs.Trigger value="tradeHistory">
                       Trade History
                     </Tabs.Trigger>
-                    <Tabs.Trigger value="crossChain">Cross Chain</Tabs.Trigger>
+                    <Tabs.Trigger value="crossChain">Cross Chain</Tabs.Trigger> */}
+                    <div className="tabs" onClick={() => setTabs({
+                      transfer: true,
+                      openorders: false,
+                      orderhistory: false,
+                      tradehistory: false,
+                      crosschain: false
+                    })}>
+                      <h2 className={`${tabs.transfer ? "text-newBase" : "text-secondary"} text-md cursor-pointer font-bold hover:text-newHover active:newPressed`}>Transfer</h2>
+                    </div>
+                    <div className="tabs" onClick={() => setTabs({
+                      transfer: false,
+                      openorders: true,
+                      orderhistory: false,
+                      tradehistory: false,
+                      crosschain: false
+                    })}>
+                      <h2 className={`${tabs.openorders ? "text-newBase" : "text-secondary"} text-md cursor-pointer font-bold hover:text-newHover active:newPressed`}>Open Orders</h2>
+                    </div>
+                    <div className="tabs" onClick={() => setTabs({
+                      transfer: false,
+                      openorders: false,
+                      orderhistory: true,
+                      tradehistory: false,
+                      crosschain: false
+                    })}>
+                      <h2 className={`${tabs.orderhistory ? "text-newBase" : "text-secondary"} text-md cursor-pointer font-bold hover:text-newHover active:newPressed`}>Order History</h2>
+                    </div>
+                    <div className="tabs" onClick={() => setTabs({
+                      transfer: false,
+                      openorders: false,
+                      orderhistory: false,
+                      tradehistory: true,
+                      crosschain: false
+                    })}>
+                      <h2 className={`${tabs.tradehistory ? "text-newBase" : "text-secondary"} text-md cursor-pointer font-bold hover:text-newHover active:newPressed`}>Trade History</h2>
+                    </div>
+                    <div className="tabs" onClick={() => setTabs({
+                      transfer: false,
+                      openorders: false,
+                      orderhistory: false,
+                      tradehistory: false,
+                      crosschain: true
+                    })}>
+                      <h2 className={`${tabs.crosschain ? "text-newBase" : "text-secondary"} text-md cursor-pointer font-bold hover:text-newHover active:newPressed`}>Cross Chain</h2>
+                    </div>
                   </Tabs.List>
                   <ScrollArea.Bar orientation="horizontal" />
                 </ScrollArea>

@@ -78,8 +78,8 @@ export const Profile = ({
             <div className="flex flex-col gap-2">
               <Button.Solid
                 appearance="tertiary"
-                className="bg-level-1"
-                onClick={onConnectWallet}
+                className="bg-backgroundNew"
+                // onClick={onConnectWallet}
               >
                 Connect Wallet
               </Button.Solid>

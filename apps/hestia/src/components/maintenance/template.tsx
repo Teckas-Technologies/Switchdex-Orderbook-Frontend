@@ -45,7 +45,7 @@ export function Template() {
                 >
                   <Link
                     target="_blank"
-                    href="https://discord.com/invite/Uvua83QAzk"
+                    href="#"
                   >
                     <RiDiscordFill className="w-full h-full" />
                   </Link>
@@ -56,7 +56,7 @@ export function Template() {
                   className="gap-2 w-fit"
                   appearance="secondary"
                 >
-                  <Link target="_blank" href="https://t.me/Polkadex">
+                  <Link target="_blank" href="#">
                     <RiTelegramFill className="w-full h-full" />
                   </Link>
                 </Button.Icon>

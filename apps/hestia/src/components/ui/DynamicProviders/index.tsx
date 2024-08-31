@@ -130,7 +130,7 @@ export const DynamicProviders = ({ children }: { children: ReactNode }) => {
                     <OrderbookServiceProvider>
                       <SessionProvider>
                         <SubscriptionProvider
-                          marketId={(params.id as string) ?? "DOTUSDT"}
+                          marketId={(params.id as string) ?? "MYIDUSDT"}
                         >
                           <TransactionManagerProvider>
                             <ConnectWalletProvider>

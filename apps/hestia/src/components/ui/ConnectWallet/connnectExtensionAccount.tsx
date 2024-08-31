@@ -21,7 +21,7 @@ export const ConnectExtensionAccount = ({
 }) => {
   return (
     <Interaction className="w-full">
-      <Interaction.Title onClose={{ onClick: onClose }}>
+      <Interaction.Title onClose={{ onClick: onClose }} className="bg-backgroundNew">
         Connect wallet
       </Interaction.Title>
       <Interaction.Content withPadding={false}>

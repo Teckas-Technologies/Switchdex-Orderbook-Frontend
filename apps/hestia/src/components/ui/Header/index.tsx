@@ -66,13 +66,13 @@ export const Header = forwardRef<HTMLDivElement>((_, ref) => {
             className="md:flex-1 md:max-w-[140px] max-md:w-auto max-md:h-8 max-md:overflow-hidden"
           >
             <div className="logo h-8 w-auto flex items-center gap-1">
-              <img src="img/dark_switchdex_logo.jpg" className="h-8 w-8" alt="" />
+              <img src="https://i.imgur.com/43tnKmp.jpeg" className="h-8 w-8" alt="no" />
               <h2 className="text-lg text-white">Switchdex</h2>
             </div>
             {/* <Logo.Orderbook className="max-md:pointer-events-none max-md:h-8 max-md:[&_g]:hidden" /> */}
           </Link>
           <div className="gap-5 hidden items-center lg:!flex">
-            {/* <HeaderLink.Single href={lastUsedMarketUrl}>
+            <HeaderLink.Single href={lastUsedMarketUrl}>
               Trade
             </HeaderLink.Single>
             <HeaderLink.Single
@@ -80,7 +80,7 @@ export const Header = forwardRef<HTMLDivElement>((_, ref) => {
               disabled={isBridgeDisabled}
             >
               Bridge
-            </HeaderLink.Single> */}
+            </HeaderLink.Single>
             <HeaderLink.Single disabled={isRewardDisabled} href="/rewards">
               Rewards
             </HeaderLink.Single>

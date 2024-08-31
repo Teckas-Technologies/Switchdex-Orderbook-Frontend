@@ -387,9 +387,9 @@ export function Rewards(props: ComponentProps<"svg">) {
           y2="101.469"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E6007A" stop-opacity="0" />
-          <stop offset="0.519392" stop-color="#E6007A" />
-          <stop offset="1" stop-color="#E6007A" stop-opacity="0" />
+          <stop stop-color="#45C1C3" stop-opacity="0" />
+          <stop offset="0.519392" stop-color="#45C1C3" />
+          <stop offset="1" stop-color="#45C1C3" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_110_1506"
@@ -399,7 +399,7 @@ export function Rewards(props: ComponentProps<"svg">) {
           y2="85.7981"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E6007A" />
+          <stop stop-color="#45C1C3" />
           <stop offset="1" stop-color="#220012" />
         </linearGradient>
         <linearGradient
@@ -410,7 +410,7 @@ export function Rewards(props: ComponentProps<"svg">) {
           y2="65.2104"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E6007A" />
+          <stop stop-color="#45C1C3" />
           <stop offset="1" stop-color="#220012" />
         </linearGradient>
         <linearGradient
@@ -421,7 +421,7 @@ export function Rewards(props: ComponentProps<"svg">) {
           y2="65.2104"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E6007A" />
+          <stop stop-color="#45C1C3" />
           <stop offset="1" stop-color="#220012" />
         </linearGradient>
         <linearGradient
@@ -432,7 +432,7 @@ export function Rewards(props: ComponentProps<"svg">) {
           y2="100.207"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E6007A" />
+          <stop stop-color="#45C1C3" />
           <stop offset="1" stop-color="#771046" />
         </linearGradient>
         <linearGradient
@@ -443,7 +443,7 @@ export function Rewards(props: ComponentProps<"svg">) {
           y2="87.1786"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E6007A" />
+          <stop stop-color="#45C1C3" />
           <stop offset="1" stop-color="#450226" />
         </linearGradient>
         <linearGradient
@@ -465,7 +465,7 @@ export function Rewards(props: ComponentProps<"svg">) {
           y2="12.3251"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#E6007A" />
+          <stop stop-color="#45C1C3" />
           <stop offset="1" stop-color="#771046" />
         </linearGradient>
       </defs>

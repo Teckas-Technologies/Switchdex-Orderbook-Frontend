@@ -24,7 +24,7 @@ export function UNKN(props: ComponentProps<"svg">) {
       />
       <path
         d="M6.38075 8.77539H4.03125V11.1249H6.38075V8.77539Z"
-        fill="#E6007A"
+        fill="#45C1C3"
       />
     </svg>
   );

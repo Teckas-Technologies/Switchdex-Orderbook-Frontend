@@ -1,13 +1,13 @@
 export const commom = {
-  "primary-base": "#E6007A",
-  "primary-hover": "#EA268E",
-  "primary-pressed": "#9F005F",
-  "primary-ghost": "#EA268E22",
+  "primary-base": "#45C1C3", // Updated base color
+  "primary-hover": "#5cd4d6", // Updated hover color
+  "primary-pressed": "#348d8e", // Derived darker shade for pressed
+  "primary-ghost": "#5cd4d622", // Updated ghost color
   "primary-disabled": "#2B303A",
   "secondary-base": "#252932",
   "secondary-hover": "#3D4452",
   "secondary-pressed": "#454E5E",
-  "tertiary-base": "#343A46",
+  "tertiary-base": "#45C1C3",
   "tertiary-hover": "#373E4A",
   "tertiary-pressed": "#2B303A",
   "danger-base": "#EB5757",
@@ -81,6 +81,9 @@ export const themeConfig = {
         placeholder: "#FFFFFF7F",
         actionInput: "#FFFFFF33",
         disabled: "#2B303A",
+        newBase: '#3ba2a3',
+        newHover: '#45C1C3',
+        newPressed: '#5cd4d6'
       },
       backgroundColor: {
         ...commom,

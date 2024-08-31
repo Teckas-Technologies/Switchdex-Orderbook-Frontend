@@ -48,25 +48,45 @@ export const Orderbook = ({ id }: { id: string }) => {
         )}
       >
         <div className="grid grid-cols-[30%_35%_35%] p-2 sticky top-0 left-0">
+          {/* <Typography.Text size="xs" appearance="primary">
+            Price {!loading && `(${quoteUnit}USDT)`}
+          </Typography.Text> */}
           <Typography.Text size="xs" appearance="primary">
-            Price {!loading && `(${quoteUnit})`}
+            Price (USDT)
           </Typography.Text>
-          <Typography.Text
+          {/* <Typography.Text
             size="xs"
             appearance="primary"
             className="justify-self-end"
           >
             Amount {!loading && `(${baseUnit})`}
-          </Typography.Text>
+          </Typography.Text> */}
           <Typography.Text
             size="xs"
             appearance="primary"
             className="justify-self-end"
           >
+            Amount (MYID)
+          </Typography.Text>
+          {/* <Typography.Text
+            size="xs"
+            appearance="primary"
+            className="justify-self-end"
+          >
             Total {!loading && `(${quoteUnit})`}
+          </Typography.Text> */}
+          <Typography.Text
+            size="xs"
+            appearance="primary"
+            className="justify-self-end"
+          >
+            Total (USDT)
           </Typography.Text>
         </div>
-        <Skeleton loading={!!loading}>
+        <Skeleton
+          // loading={!!loading}
+          loading={false}
+        >
           <Table
             pricePrecision={sizeState.length}
             qtyPrecision={qtyPrecision}
@@ -78,12 +98,16 @@ export const Orderbook = ({ id }: { id: string }) => {
           />
         </Skeleton>
         <LastPrice
-          loading={!!loading}
+          // loading={!!loading}
+          loading={false}
           lastPrice={lastPriceValue}
           isPriceUp={isPriceUp}
           inverted={filterState === "OrderDesc"}
         />
-        <Skeleton loading={!!loading}>
+        <Skeleton
+          // loading={!!loading}
+          loading={false}
+        >
           <Table
             pricePrecision={sizeState.length}
             qtyPrecision={qtyPrecision}
