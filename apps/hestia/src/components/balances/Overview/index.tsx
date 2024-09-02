@@ -49,7 +49,7 @@ export const Overview = () => {
         </OverviewCard>
         <OverviewCard
           icon="RiSkipUpLine"
-          href="/thea?from=Polkadex&to=Polkadot"
+          href="/thea?from=Switchdex&to=Clarus"
         >
           Withdraw
         </OverviewCard>

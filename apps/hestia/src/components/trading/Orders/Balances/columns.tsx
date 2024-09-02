@@ -94,16 +94,18 @@ export const columns = [
           withdrawLink={{
             pathname: "/thea",
             query: {
-              from: "Polkadex",
-              to: chainName,
+              from: "Switchdex",
+              // to: chainName,
+              to: "Clarus",
               asset: e.getValue().ticker,
             },
           }}
           depositLink={{
             pathname: "/thea",
             query: {
-              from: chainName,
-              to: "Polkadex",
+              // from: chainName,
+              from: "Clarus",
+              to: "Switchdex",
               asset: e.getValue().ticker,
             },
           }}

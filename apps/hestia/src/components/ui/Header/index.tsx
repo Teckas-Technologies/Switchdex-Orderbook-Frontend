@@ -76,7 +76,8 @@ export const Header = forwardRef<HTMLDivElement>((_, ref) => {
               Trade
             </HeaderLink.Single>
             <HeaderLink.Single
-              href={`/thea?from=${defaultTheaSourceChain}&to=${defaultTheaDestinationChain}`}
+              // href={`/thea?from=${defaultTheaSourceChain}&to=${defaultTheaDestinationChain}`}
+              href={`/thea?from=Switchdex&to=Clarus`}
               disabled={isBridgeDisabled}
             >
               Bridge

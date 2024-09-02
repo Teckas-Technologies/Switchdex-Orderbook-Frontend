@@ -22,7 +22,7 @@ const ConnectAccount = () => {
       <Button.Solid
         type="button"
         appearance="secondary"
-        onClick={() => onToogleFundWallet(true)}
+        // onClick={() => onToogleFundWallet(true)}
       >
         Fund Account
       </Button.Solid>
@@ -33,11 +33,11 @@ const ConnectAccount = () => {
     <Button.Solid
       type="button"
       appearance="secondary"
-      onClick={() =>
-        isFundingType
-          ? onToogleConnectExtension(true)
-          : onToogleConnectTrading(true)
-      }
+      // onClick={() =>
+      //   isFundingType
+      //     ? onToogleConnectExtension(true)
+      //     : onToogleConnectTrading(true)
+      // }
     >
       Connect {isFundingType ? "Funding" : "Trading"} Account
     </Button.Solid>

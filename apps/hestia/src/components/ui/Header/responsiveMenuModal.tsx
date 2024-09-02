@@ -72,7 +72,7 @@ export const ResponsiveMenuModal = ({
                   <HeaderLink.Single
                     size="lg"
                     // href="/thea"
-                    href="/thea?from=Polkadot&to=Polkadex&asset=DOT"
+                    href="/thea?from=Switchdex&to=Clarus&asset=MYID"
                     className="text-lg"
                     disabled={isBridgeDisabled}
                   >

@@ -18,7 +18,7 @@ export const Hero = () => {
             <div className="flex items-center gap-2 text-primary">
               <Icons.Checked className="w-3 h-3" />
               <Typography.Text size={width > 800 ? "lg" : "md"}>
-                Fast Finances
+                Fast
               </Typography.Text>
             </div>
             <div className="flex items-center gap-2 text-primary">
@@ -30,12 +30,12 @@ export const Hero = () => {
             <div className="flex items-center gap-2 text-primary">
               <Icons.Checked className="w-3 h-3" />
               <Typography.Text size={width > 800 ? "lg" : "md"}>
-                Easy Accessible
+                Easy
               </Typography.Text>
             </div>
           </div>
           <Typography.Heading size={width > 700 ? "3xl" : "3xl"}>
-            Next-Gen Decentralized Banking Trade with Confidence on the Most Transparent Exchange
+            Trade with Confidence
           </Typography.Heading>
         </div>
 

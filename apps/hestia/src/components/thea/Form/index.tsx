@@ -468,11 +468,10 @@ export const Form = () => {
                     })}
                   </SelectNetwork> */}
                 </div>
-                <AccountCombobox
-                  account={destinationAccount}
-                  setAccount={(e) => e && setDestinationAccount(e)}
-                  evm={destinationChain?.type !== ChainType.Substrate}
-                />
+                <div className="flex items-center gap-2">
+                      <RiWalletLine className="w-3.5 h-3.5 text-actionInput" />
+                      <Typography.Text>Select or enter a Clarus address</Typography.Text>
+                    </div>
               </div>
             </div>
           </div>

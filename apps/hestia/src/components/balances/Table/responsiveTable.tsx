@@ -48,8 +48,9 @@ export const ResponsiveTable = ({
             href={{
               pathname: "/thea",
               query: {
-                from: "Polkadex",
-                to: chainName,
+                from: "Switchdex",
+                // to: chainName,
+                to: "Clarus",
                 asset: ticker,
               },
             }}
@@ -63,8 +64,9 @@ export const ResponsiveTable = ({
             href={{
               pathname: "/thea",
               query: {
-                from: chainName,
-                to: "Polkadex",
+                // from: chainName,
+                from: "Clarus",
+                to: "Switchdex",
                 asset: ticker,
               },
             }}

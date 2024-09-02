@@ -31,8 +31,9 @@ export const Balance = ({
                 href={{
                   pathname: "/thea",
                   query: {
-                    from: "Polkadex",
-                    to: chainName,
+                    from: "Switchdex",
+                    // to: chainName,
+                    to: "Clarus",
                     asset: baseTicker,
                   },
                 }}
@@ -47,8 +48,9 @@ export const Balance = ({
                 href={{
                   pathname: "/thea",
                   query: {
-                    from: chainName,
-                    to: "Polkadex",
+                    // from: chainName,
+                    from: "Clarus",
+                    to: "Switchdex",
                     asset: baseTicker,
                   },
                 }}

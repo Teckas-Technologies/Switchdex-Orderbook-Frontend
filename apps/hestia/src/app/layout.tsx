@@ -14,7 +14,7 @@ const font = Roboto({
 export const metadata: Metadata = {
   title: "Switchdex Orderbook || A fully decentralized exchange platform",
   description: "A fully decentralized exchange platform",
-  icons: "img/dark_switchdex_logo.jpg",
+  icons: "/icon-192x192.png",
   keywords: [
     "trading",
     "crypto",
@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     "switchdex",
     "decentralized",
     "exchange",
+    "clarus",
+    "myid",
+    "swch"
   ],
 };
 
@@ -30,8 +33,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className="scrollbar-hide">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="img/dark_switchdex_logo.jpg" />
-        <link rel="icon" href="img/dark_switchdex_logo.jpg" type="image/jpeg" />
+        <link rel="icon" href="/icon-192x192.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+
 
         <meta
           name="viewport"

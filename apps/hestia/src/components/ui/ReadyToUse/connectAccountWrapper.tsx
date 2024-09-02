@@ -52,7 +52,7 @@ export const ConnectAccountWrapper = ({
           <Button.Solid
             asChild
             className="bg-newBase hover:bg-newHover active:bg-newPressed cursor-pointer"
-            onClick={() => onToogleConnectTrading()}
+            // onClick={() => onToogleConnectTrading()}
           >
             <h2>Connect Trading Account</h2>
           </Button.Solid>

@@ -101,8 +101,9 @@ export const InsufficientBalance = ({
                                   href={{
                                     pathname: "/thea",
                                     query: {
-                                      from: chainName,
-                                      to: "Polkadex",
+                                      // from: chainName,
+                                      from: "Clarus",
+                                      to: "Switchdex",
                                     },
                                   }}
                                   target="_blank"

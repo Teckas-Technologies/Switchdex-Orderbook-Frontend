@@ -180,6 +180,7 @@ export function Template({ id }: { id: string }) {
           ref={interactionRef}
           market={currentMarket}
         />
+        // <h2></h2>
       ) : (
         <Footer marketsActive ref={footerRef} />
       )} 
